@@ -23,6 +23,5 @@ for even_number in list1:
         continue
 
 # Saving
-file = open('data.bin', 'wb')
-pickle.dump(six_list, file)
-file.close()
+with open('data.bin', 'wb') as file:
+    pickle.dump(six_list, file)
