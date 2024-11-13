@@ -1,4 +1,4 @@
-import pickle
+import shelve
 
 dict_cars = {
     "AI1327CA": "Ruslan Shevchenko",
@@ -13,5 +13,5 @@ dict_cars = {
     "CB6321PH": "Konstantin Gnatyuk"
 }
 
-with open('cars_data.bin', 'wb') as file:
-    pickle.dump(dict_cars, file)
+with shelve.open('cars_data') as file:
+    file['cars'] = dict_cars

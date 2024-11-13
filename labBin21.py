@@ -1,7 +1,7 @@
-import pickle
+import shelve
 
-with open('cars_data.bin', 'rb') as file:
-    cars_data = pickle.load(file)
+with shelve.open('cars_data') as file:
+    cars_data = file['cars']
 
 for number, owner in cars_data.items():
     print(f"Number: {number}, Owner: {owner}")
